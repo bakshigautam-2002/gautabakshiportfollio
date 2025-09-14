@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name — web developer / designer / whatever" />
+
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#6C5CE7;
+      --bg:#0f1720;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071019 0%, #06111a 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+
+    .container{max-width:1100px;margin:32px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#00b894);display:grid;place-items:center;font-weight:700}
+    nav{display:flex;gap:12px}
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+    nav a:hover{color:#fff;background:var(--glass)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:28px}
+    .hero h1{font-size:clamp(28px,4vw,42px);margin:0}
+    .hero p{color:var(--muted);line-height:1.6}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px;box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600;color:var(--muted)}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.025)}
+    .project h3{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    .contact-form{display:grid;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:8px;color:inherit}
+    input::placeholder, textarea::placeholder{color:var(--muted)}
+    button.primary{background:linear-gradient(90deg,var(--accent),#00b894);border:none;padding:10px 14px;border-radius:10px;color:#04111a;font-weight:700;cursor:pointer}
+
+    footer{margin:48px 0 12px 0;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .logo .mark{width:40px;height:40px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">GB</div>
+        <div>
+          <div style="font-weight:700">Gautam Bakshi</div>
+          <div style="font-size:12px;color:var(--muted)">Designer • Developer • Creator</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume" onclick="openResume(event)">Resume</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Hi — I'm <span style="color:var(--accent)">Gautam Bakshi</span></h1>
+          <p>I build beautiful and performant websites and applications. I’m currently available for freelance work and open to full-time roles. Below are a few highlights of my work — check out the projects or contact me to collaborate.</p>
+
+          <div class="card" style="margin-top:18px">
+            <h3 style="margin:0 0 8px 0">Skills</h3>
+            <div class="skills">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">React</div>
+              <div class="skill">Node.js</div>
+              <div class="skill">Figma</div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="card" style="text-align:center">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><rect rx='24' width='100%' height='100%' fill='%23202a3a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Inter, Arial' font-size='28' fill='%23ffffff'>Your Photo</text></svg>" alt="Your photo" style="width:100%;border-radius:10px;margin-bottom:12px" />
+          <div style="color:var(--muted);font-size:14px">Based in City, Country</div>
+          <div style="margin-top:10px;display:flex;gap:8px;justify-content:center">
+            <a href="#contact" class="primary" style="padding:8px 12px;display:inline-block">Contact</a>
+            <a href="#projects" style="padding:8px 12px;background:transparent;border-radius:8px;border:1px solid rgba(255,255,255,0.04);display:inline-block;color:var(--muted)">See Work</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" style="margin-top:28px">
+        <h2 style="margin:0 0 8px 0">Selected Projects</h2>
+        <div class="projects-grid">
+          <article class="project card">
+            <h3>Project One</h3>
+            <p>Short project description. Tech used: React, Node.js. <a href="#">View</a></p>
+          </article>
+
+          <article class="project card">
+            <h3>Project Two</h3>
+            <p>Short project description. Tech used: HTML, CSS, Animation. <a href="#">View</a></p>
+          </article>
+
+          
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:28px">
+        <h2 style="margin:0 0 8px 0">About</h2>
+        <div class="card" style="padding:18px">
+          <p style="margin:0;color:var(--muted)">I’m a developer who loves building web experiences that are fast, accessible, and joyful to use. I focus on problem solving and shipping polished interactions. When I’m not coding you’ll find me sketching interfaces or learning a new language.</p>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h2 style="margin:0 0 8px 0">Contact</h2>
+        <div class="card">
+          <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+            <input type="text" id="subject" placeholder="Subject" />
+            <textarea id="message" placeholder="Message" rows="5" required></textarea>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit" class="primary">Send message</button>
+              <div style="color:var(--muted);font-size:13px">Or email me at <a href="mailto:you@example.com">bakshigautam14@gmail.com</a></div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="resume" style="margin-top:28px">
+        <h2 style="margin:0 0 8px 0">Resume</h2>
+        <div class="card" style="padding:18px;text-align:center">
+          <p style="color:var(--muted)">Download my resume as PDF:</p>
+          <a href="Gautam%20bakshi%20CV%20(1).pdf" download class="primary">Download Resume</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Built with ❤️ — Gautam Bakshi • <span id="year"></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      // This demo does not send messages. Replace with your preferred backend or service.
+      alert('Thanks, ' + name + '! Your message has been recorded (demo).\n\nEmail: ' + email + '\nSubject: ' + subject + '\nMessage: ' + message);
+      document.getElementById('contactForm').reset();
+    }
+
+    function openResume(e){
+      e.preventDefault();
+      // Replace with your resume URL or implement actual download
+      alert('Replace the resume link in the HTML with your real PDF URL.');
+    }
+    function downloadResume(e){
+      e.preventDefault();
+      alert('Replace this function to link to your resume PDF or trigger a download.');
+    }
+  </script>
+</body>
+</html>
